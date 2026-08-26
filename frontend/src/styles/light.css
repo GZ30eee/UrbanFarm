@@ -1,0 +1,6 @@
+/* Light theme – we use the same as root, but could override if needed */
+:root {
+  --background: #faf6f0;
+  --surface: #ffffff;
+  --text: #3d3d3d;
+}
