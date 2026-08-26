@@ -1,0 +1,87 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 70px;
+  background: #ffffff;
+  border-bottom: 1px solid #f0e8dc;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  z-index: 200;
+  box-shadow: 0 2px 12px rgba(160, 140, 120, 0.04);
+}
+
+.navbar-left .logo {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #4a3f3a;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.navbar-right .user-name {
+  font-weight: 500;
+  color: #4a3f3a;
+  font-size: 0.95rem;
+}
+
+.navbar-right .logout-btn {
+  background: none;
+  border: 1.5px solid #e5dbd1;
+  padding: 0.3rem 1.2rem;
+  border-radius: 30px;
+  color: #5a4f47;
+  font-weight: 500;
+  transition: 0.2s;
+  font-size: 0.9rem;
+}
+
+.navbar-right .logout-btn:hover {
+  background: #f5ede4;
+  border-color: #d4c5b2;
+}
+
+.theme-toggle {
+  background: none;
+  border: none;
+  font-size: 1.3rem;
+  color: #6b5e52;
+  padding: 0.2rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.theme-toggle:hover {
+  color: #4a3f3a;
+  transform: rotate(20deg);
+}
+
+/* Mobile hamburger placeholder – you can add if needed */
+.mobile-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.6rem;
+  color: #4a3f3a;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .mobile-toggle {
+    display: block;
+  }
+  .navbar-right .user-name {
+    display: none;
+  }
+}
