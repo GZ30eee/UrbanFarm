@@ -1,0 +1,21 @@
+.task-form .modal-content {
+  max-width: 480px;
+}
+
+.task-form .form-group textarea {
+  resize: vertical;
+  min-height: 70px;
+}
+
+.task-form .form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+@media (max-width: 450px) {
+  .task-form .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}
