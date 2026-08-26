@@ -1,0 +1,29 @@
+.dashboard {
+  padding: 1.5rem 2rem;
+}
+
+.dashboard h1 {
+  color: #4a3f3a;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.dashboard .stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+  margin: 1.8rem 0 2.5rem 0;
+}
+
+.dashboard .recent-activity {
+  background: #ffffff;
+  padding: 1.5rem 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(160, 140, 120, 0.08);
+}
+
+.dashboard .recent-activity h3 {
+  color: #4a3f3a;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
