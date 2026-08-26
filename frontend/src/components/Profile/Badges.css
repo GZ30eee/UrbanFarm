@@ -1,0 +1,30 @@
+.badges-section {
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 2px dashed #f0e8dc;
+}
+
+.badges-section h3 {
+  color: #4a3f3a;
+  font-weight: 500;
+  margin-bottom: 0.8rem;
+}
+
+.badges-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.badge-item {
+  background: #faf6f0;
+  padding: 0.4rem 1.2rem;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  color: #4a3f3a;
+  border: 1.5px solid #f0d5c0;
+  box-shadow: 0 2px 8px rgba(160, 140, 120, 0.06);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
