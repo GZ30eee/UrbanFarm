@@ -1,0 +1,31 @@
+.profile-page {
+  background: #ffffff;
+  padding: 1.8rem 2.2rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 16px rgba(160, 140, 120, 0.08);
+  max-width: 600px;
+}
+
+.profile-page h2 {
+  color: #4a3f3a;
+  margin-bottom: 1.5rem;
+}
+
+.profile-view p {
+  padding: 0.4rem 0;
+  border-bottom: 1px solid #f0e8dc;
+}
+
+.profile-view strong {
+  color: #4a3f3a;
+  min-width: 130px;
+  display: inline-block;
+}
+
+.profile-view .btn-primary {
+  margin-top: 1.2rem;
+}
+
+.profile-form {
+  margin-top: 0.5rem;
+}
