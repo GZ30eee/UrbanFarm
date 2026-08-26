@@ -1,0 +1,51 @@
+.crop-card {
+  background: #ffffff;
+  padding: 1.2rem 1.5rem;
+  border-radius: 18px;
+  border: 1px solid #f0e8dc;
+  box-shadow: 0 4px 12px rgba(160, 140, 120, 0.06);
+  transition: 0.2s;
+}
+
+.crop-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(160, 140, 120, 0.10);
+}
+
+.crop-card h4 {
+  color: #4a3f3a;
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+}
+
+.crop-confidence {
+  font-size: 0.85rem;
+  color: #6b5e52;
+  margin-bottom: 0.6rem;
+  background: #f5ede4;
+  display: inline-block;
+  padding: 0.1rem 1rem;
+  border-radius: 30px;
+}
+
+.crop-reason {
+  color: #5a4f47;
+  font-size: 0.9rem;
+  margin-bottom: 0.6rem;
+  line-height: 1.4;
+}
+
+.crop-tips,
+.crop-yield {
+  font-size: 0.85rem;
+  color: #4a3f3a;
+  background: #faf6f0;
+  padding: 0.3rem 0.8rem;
+  border-radius: 8px;
+  margin-bottom: 0.3rem;
+}
+
+.crop-tips strong,
+.crop-yield strong {
+  color: #6b5e52;
+}
