@@ -1,0 +1,58 @@
+.watering-schedule {
+  background: #faf6f0;
+  padding: 1.2rem 1.8rem;
+  border-radius: 16px;
+  margin-top: 1.5rem;
+}
+
+.watering-schedule h3 {
+  color: #4a3f3a;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.watering-schedule ul {
+  list-style: none;
+  padding: 0;
+}
+
+.schedule-item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.8rem 1.5rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #f0e8dc;
+}
+
+.schedule-item:last-child {
+  border-bottom: none;
+}
+
+.schedule-item .date {
+  font-weight: 500;
+  color: #4a3f3a;
+  min-width: 100px;
+}
+
+.schedule-item .amount {
+  background: #d6eaf8;
+  padding: 0.1rem 1rem;
+  border-radius: 30px;
+  font-size: 0.85rem;
+  color: #2a4a5a;
+}
+
+.schedule-item .time {
+  background: #fce4d6;
+  padding: 0.1rem 1rem;
+  border-radius: 30px;
+  font-size: 0.85rem;
+  color: #6a4a3a;
+}
+
+.schedule-item .notes {
+  color: #6b5e52;
+  font-size: 0.9rem;
+  font-style: italic;
+}c
