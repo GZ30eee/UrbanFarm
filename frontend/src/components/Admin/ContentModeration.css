@@ -1,0 +1,33 @@
+.content-moderation {
+  background: #ffffff;
+  padding: 1.8rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 16px rgba(160, 140, 120, 0.08);
+}
+
+.content-moderation h3 {
+  color: #4a3f3a;
+  margin-bottom: 1.2rem;
+}
+
+.mod-item {
+  background: #faf6f0;
+  padding: 1.2rem 1.5rem;
+  border-radius: 16px;
+  margin-bottom: 1rem;
+  border-left: 4px solid #f0c0c0;
+}
+
+.mod-item h4 {
+  margin-bottom: 0.3rem;
+  color: #4a3f3a;
+}
+
+.mod-item p {
+  color: #6b5e52;
+  margin-bottom: 1rem;
+}
+
+.mod-item .btn-primary {
+  margin-right: 0.8rem;
+}
