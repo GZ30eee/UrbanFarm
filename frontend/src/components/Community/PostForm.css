@@ -1,0 +1,30 @@
+/* Reuses .modal-overlay and .modal-content from global, but adds specific tweaks */
+.post-form .modal-content {
+  max-width: 540px;
+}
+
+.post-form .form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.post-form .form-group input[type="file"] {
+  padding: 0.5rem 0;
+  border: none;
+  background: transparent;
+}
+
+.post-form .form-group input[type="file"]::-webkit-file-upload-button {
+  background: #f0e8dc;
+  border: none;
+  padding: 0.4rem 1.2rem;
+  border-radius: 30px;
+  color: #4a3f3a;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.post-form .form-group input[type="file"]::-webkit-file-upload-button:hover {
+  background: #e5dbd1;
+}
