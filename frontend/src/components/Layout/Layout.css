@@ -1,0 +1,27 @@
+.app-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: var(--background, #faf6f0);
+}
+
+.main-content {
+  display: flex;
+  flex: 1;
+  padding-top: 70px; /* Height of navbar */
+}
+
+.page-content {
+  flex: 1;
+  padding: 1.5rem 2rem 2rem 2rem;
+  margin-left: 220px; /* Width of sidebar */
+  min-height: calc(100vh - 70px - 60px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .page-content {
+    margin-left: 0;
+    padding: 1rem;
+  }
+}
