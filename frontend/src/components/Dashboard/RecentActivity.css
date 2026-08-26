@@ -1,0 +1,41 @@
+.activity-list {
+  list-style: none;
+  padding: 0;
+}
+
+.activity-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.7rem 0.2rem;
+  border-bottom: 1px solid #f5ede4;
+}
+
+.activity-item:last-child {
+  border-bottom: none;
+}
+
+.activity-icon {
+  font-size: 1.2rem;
+  width: 30px;
+}
+
+.activity-text {
+  flex: 1;
+  color: #4a3f3a;
+}
+
+.activity-date {
+  font-size: 0.8rem;
+  color: #9a8a7a;
+  background: #f5ede4;
+  padding: 0.2rem 0.8rem;
+  border-radius: 30px;
+}
+
+.no-activity {
+  color: #9a8a7a;
+  font-style: italic;
+  text-align: center;
+  padding: 1rem 0;
+}
