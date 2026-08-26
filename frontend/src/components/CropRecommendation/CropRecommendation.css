@@ -1,0 +1,41 @@
+.crop-recommendation {
+  background: #ffffff;
+  padding: 1.8rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 16px rgba(160, 140, 120, 0.08);
+}
+
+.crop-recommendation h2 {
+  color: #4a3f3a;
+}
+
+.crop-recommendation p {
+  color: #6b5e52;
+  margin-bottom: 1.5rem;
+}
+
+.crop-form {
+  background: #faf6f0;
+  padding: 1.5rem;
+  border-radius: 16px;
+  margin-bottom: 2rem;
+}
+
+.crop-form .form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+@media (max-width: 500px) {
+  .crop-form .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.crop-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
