@@ -1,0 +1,9 @@
+/* Dark theme – optional but included */
+:root.dark {
+  --background: #2c2a2a;
+  --surface: #3d3a3a;
+  --text: #e8e0d8;
+  --text-secondary: #c4b8ae;
+  --border: #5a4f47;
+  --shadow: rgba(0, 0, 0, 0.4);
+}
