@@ -3,7 +3,7 @@ const router = express.Router();
 const {
   addPlant,
   getPlants,
-  getPlantById,
+  getPlantById,  // ✅ Make sure this is imported
   updatePlant,
   deletePlant,
   addTimelineEntry,
@@ -16,7 +16,7 @@ router.route('/')
   .get(protect, getPlants);
 
 router.route('/:id')
-  .get(protect, getPlantById)
+  .get(protect, getPlantById)  // ✅ Make sure this route exists
   .put(protect, updatePlant)
   .delete(protect, deletePlant);
 
