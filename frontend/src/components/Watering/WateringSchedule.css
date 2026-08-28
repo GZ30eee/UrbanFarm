@@ -1,58 +1,360 @@
 .watering-schedule {
-  background: #faf6f0;
-  padding: 1.2rem 1.8rem;
-  border-radius: 16px;
-  margin-top: 1.5rem;
+  width: 100%;
 }
 
-.watering-schedule h3 {
-  color: #4a3f3a;
+.schedule-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
   margin-bottom: 1rem;
+}
+
+.schedule-header h3 {
+  color: #4a3f3a;
+  margin: 0;
   font-weight: 500;
 }
 
-.watering-schedule ul {
+.weather-adjusted-badge {
+  font-size: 0.75rem;
+  background: #d6eaf8;
+  padding: 0.2rem 0.8rem;
+  border-radius: 20px;
+  color: #2a4a5a;
+}
+
+/* Soil Moisture */
+.soil-moisture {
+  background: #ffffff;
+  padding: 0.8rem 1rem;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+}
+
+.moisture-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: #4a3f3a;
+}
+
+.moisture-value {
+  font-weight: 500;
+}
+
+.moisture-value.dry {
+  color: #e8b4b4;
+}
+
+.moisture-value.good {
+  color: #a8d5ba;
+}
+
+.moisture-bar {
+  width: 100%;
+  height: 4px;
+  background: #f5ede4;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 0.2rem;
+}
+
+.moisture-fill {
+  height: 100%;
+  border-radius: 10px;
+  transition: width 0.6s ease;
+}
+
+.moisture-warning {
+  font-size: 0.75rem;
+  color: #e8b4b4;
+  display: block;
+  margin-top: 0.2rem;
+}
+
+/* Weather Override */
+.weather-override {
+  padding: 0.5rem 0.8rem;
+  border-radius: 10px;
+  margin-bottom: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+}
+
+.weather-override.info {
+  background: #d6eaf8;
+  color: #2a4a5a;
+}
+
+.weather-override.warning {
+  background: #f0d5c0;
+  color: #5a4a3a;
+}
+
+/* Missed Alert */
+.missed-alert {
+  background: #fdf5f5;
+  border-left: 3px solid #e8b4b4;
+  padding: 0.5rem 0.8rem;
+  border-radius: 8px;
+  margin-bottom: 0.8rem;
+  font-size: 0.85rem;
+  color: #6a4a4a;
+}
+
+.missed-date {
+  display: inline-block;
+  background: #e8b4b4;
+  color: white;
+  padding: 0.05rem 0.5rem;
+  border-radius: 10px;
+  margin-left: 0.3rem;
+  font-size: 0.75rem;
+}
+
+/* Schedule Controls */
+.schedule-controls {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: #6b5e52;
+  margin-bottom: 0.8rem;
+}
+
+/* Schedule List */
+.schedule-list {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 .schedule-item {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 0.8rem 1.5rem;
-  padding: 0.5rem 0;
-  border-bottom: 1px solid #f0e8dc;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.5rem 0.8rem;
+  border-bottom: 1px solid #f5ede4;
+  transition: 0.2s;
 }
 
-.schedule-item:last-child {
-  border-bottom: none;
+.schedule-item:hover {
+  background: #ffffff;
+  border-radius: 8px;
 }
 
-.schedule-item .date {
-  font-weight: 500;
+.schedule-item.completed {
+  opacity: 0.6;
+}
+
+.schedule-item.missed {
+  background: #fdf5f5;
+  border-radius: 8px;
+}
+
+.schedule-item.today {
+  background: #f3edf7;
+  border-radius: 8px;
+}
+
+.schedule-left {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-width: 140px;
+}
+
+.water-checkbox {
+  width: 18px;
+  height: 18px;
+  accent-color: #a8d5ba;
+  cursor: pointer;
+}
+
+.water-checkbox:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.schedule-date {
+  font-size: 0.85rem;
   color: #4a3f3a;
-  min-width: 100px;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  flex-wrap: wrap;
 }
 
-.schedule-item .amount {
-  background: #d6eaf8;
-  padding: 0.1rem 1rem;
-  border-radius: 30px;
-  font-size: 0.85rem;
-  color: #2a4a5a;
+.today-badge {
+  font-size: 0.6rem;
+  background: #b8a9c9;
+  color: white;
+  padding: 0.05rem 0.4rem;
+  border-radius: 8px;
 }
 
-.schedule-item .time {
-  background: #fce4d6;
-  padding: 0.1rem 1rem;
-  border-radius: 30px;
-  font-size: 0.85rem;
-  color: #6a4a3a;
+.missed-badge {
+  font-size: 0.6rem;
+  background: #e8b4b4;
+  color: white;
+  padding: 0.05rem 0.4rem;
+  border-radius: 8px;
 }
 
-.schedule-item .notes {
+.done-badge {
+  font-size: 0.6rem;
+  color: #a8d5ba;
+}
+
+.schedule-middle {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.schedule-details {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.schedule-amount {
+  font-weight: 600;
+  color: #4a3f3a;
+  padding: 0.1rem 0.5rem;
+  border-radius: 12px;
+  background: #faf6f0;
+}
+
+.schedule-amount:hover {
+  background: #f0e8dc;
+}
+
+.edited-badge {
+  font-size: 0.6rem;
+  color: #9a87b1;
+}
+
+.schedule-time {
+  font-size: 0.8rem;
   color: #6b5e52;
-  font-size: 0.9rem;
+  background: #f5ede4;
+  padding: 0.05rem 0.5rem;
+  border-radius: 10px;
+}
+
+.adjustment-reason {
+  font-size: 0.7rem;
+  color: #6a8a5a;
+  background: #f2faf5;
+  padding: 0.05rem 0.5rem;
+  border-radius: 10px;
+}
+
+.schedule-right {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.schedule-notes {
+  font-size: 0.8rem;
+  color: #9a8a7a;
   font-style: italic;
-}c
+}
+
+.completed-time {
+  font-size: 0.65rem;
+  color: #9a8a7a;
+}
+
+/* Edit Amount */
+.edit-amount {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.edit-amount input {
+  width: 80px;
+  padding: 0.2rem 0.5rem;
+  border: 1.5px solid #b8a9c9;
+  border-radius: 20px;
+  font-size: 0.85rem;
+}
+
+.edit-amount button {
+  padding: 0.1rem 0.6rem;
+  border: none;
+  border-radius: 15px;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.edit-amount button:first-of-type {
+  background: #b8a9c9;
+  color: white;
+}
+
+.edit-amount button:last-of-type {
+  background: #f5ede4;
+  color: #6b5e52;
+}
+
+/* Legend */
+.schedule-legend {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid #f5ede4;
+  font-size: 0.75rem;
+  color: #6b5e52;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.legend-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.legend-dot.unchecked {
+  background: #f5ede4;
+  border: 1px solid #d4c5b2;
+}
+
+.legend-dot.checked {
+  background: #a8d5ba;
+}
+
+.legend-dot.missed {
+  background: #e8b4b4;
+}
+
+.legend-dot.today {
+  background: #b8a9c9;
+}
+
+.no-schedule {
+  color: #9a8a7a;
+  text-align: center;
+  padding: 1rem 0;
+  font-style: italic;
+}
