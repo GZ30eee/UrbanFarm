@@ -9,6 +9,8 @@ exports.generateWateringSchedule = async (req, res, next) => {
   try {
     const { plantId } = req.body;
 
+    console.log('💧 Generating watering schedule for plant:', plantId);
+
     const plant = await Plant.findOne({ _id: plantId, userId: req.user.id });
     if (!plant) {
       return res.status(404).json({ success: false, message: 'Plant not found' });
@@ -22,28 +24,36 @@ exports.generateWateringSchedule = async (req, res, next) => {
     let weatherData = null;
     try {
       weatherData = await getForecast(city);
+      console.log('🌤️ Weather data fetched for:', city);
     } catch (err) {
-      console.warn('Weather fetch failed, using fallback');
+      console.warn('⚠️ Weather fetch failed, using fallback');
     }
 
     // Generate schedule using AI service
+    console.log('🤖 Generating schedule with AI...');
     const scheduleEvents = await generateSchedule(plant, weatherData);
+    console.log(`✅ Schedule generated: ${scheduleEvents.length} events`);
 
     // Save schedule to database
     const wateringSchedule = await WateringSchedule.create({
       userId: req.user.id,
-      plantId: plant._id,
+      plantId: plant._id,  // ✅ Store the plant ID
       schedule: scheduleEvents,
       weatherAdjusted: !!weatherData,
       nextWateringDate: scheduleEvents.length > 0 ? new Date(scheduleEvents[0].date) : null,
     });
 
+    // ✅ Populate the plant data before sending response
+    const populatedSchedule = await WateringSchedule.findById(wateringSchedule._id)
+      .populate('plantId', 'name imageUrl status');
+
     res.status(201).json({
       success: true,
-      schedule: wateringSchedule,
+      schedule: populatedSchedule,
       events: scheduleEvents,
     });
   } catch (error) {
+    console.error('❌ Watering schedule generation error:', error);
     next(error);
   }
 };
@@ -56,7 +66,8 @@ exports.getPlantWateringSchedule = async (req, res, next) => {
       plantId: req.params.plantId,
       userId: req.user.id,
       isActive: true,
-    });
+    }).populate('plantId', 'name imageUrl status'); // ✅ Populate plant data
+
     if (!schedule) {
       return res.status(404).json({ success: false, message: 'No schedule found for this plant' });
     }
@@ -70,8 +81,13 @@ exports.getPlantWateringSchedule = async (req, res, next) => {
 // @route   GET /api/watering/all
 exports.getAllWateringSchedules = async (req, res, next) => {
   try {
-    const schedules = await WateringSchedule.find({ userId: req.user.id, isActive: true })
-      .populate('plantId', 'name imageUrl');
+    const schedules = await WateringSchedule.find({ 
+      userId: req.user.id, 
+      isActive: true 
+    })
+    .populate('plantId', 'name imageUrl status') // ✅ Populate plant data
+    .sort({ createdAt: -1 }); // ✅ Show newest first
+    
     res.status(200).json({ success: true, schedules });
   } catch (error) {
     next(error);
@@ -86,7 +102,8 @@ exports.updateSchedule = async (req, res, next) => {
       { _id: req.params.scheduleId, userId: req.user.id },
       req.body,
       { new: true }
-    );
+    ).populate('plantId', 'name imageUrl status'); // ✅ Populate plant data
+    
     if (!schedule) {
       return res.status(404).json({ success: false, message: 'Schedule not found' });
     }
