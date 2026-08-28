@@ -1,0 +1,56 @@
+.quick-actions {
+  background: #ffffff;
+  padding: 1.2rem 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(160, 140, 120, 0.06);
+  margin-bottom: 1.5rem;
+}
+
+.quick-actions h3 {
+  color: #4a3f3a;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.actions-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.8rem;
+}
+
+@media (max-width: 600px) {
+  .actions-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.action-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.8rem 0.5rem;
+  border: none;
+  border-radius: 12px;
+  background: #faf6f0;
+  color: #4a3f3a;
+  transition: 0.2s;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.action-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(160, 140, 120, 0.15);
+  background: var(--action-color, #f5ede4);
+}
+
+.action-icon {
+  font-size: 1.5rem;
+}
+
+.action-label {
+  font-size: 0.75rem;
+  font-weight: 500;
+}
