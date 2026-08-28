@@ -1,0 +1,202 @@
+.plant-detail {
+  padding: 1.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.back-btn {
+  background: none;
+  border: none;
+  color: #6b5e52;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.back-btn:hover {
+  color: #4a3f3a;
+}
+
+.detail-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.detail-content {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 4px 16px rgba(160, 140, 120, 0.08);
+}
+
+.plant-header {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.plant-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.plant-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.plant-title h2 {
+  color: #4a3f3a;
+  margin: 0;
+}
+
+.plant-title .variety {
+  color: #6b5e52;
+  font-style: italic;
+  font-size: 0.95rem;
+}
+
+.plant-title .scientific {
+  color: #9a8a7a;
+  font-size: 0.85rem;
+  display: block;
+}
+
+.plant-badges {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.3rem;
+}
+
+.plant-badges .status-badge {
+  padding: 0.1rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  text-transform: capitalize;
+}
+
+.plant-badges .health-badge {
+  padding: 0.1rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  background: #f5ede4;
+  color: #4a3f3a;
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.detail-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.detail-item .label {
+  font-size: 0.75rem;
+  color: #9a8a7a;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.detail-item .value {
+  font-size: 1rem;
+  color: #4a3f3a;
+  font-weight: 500;
+}
+
+.plant-notes {
+  margin-bottom: 1.5rem;
+}
+
+.plant-notes h4 {
+  color: #4a3f3a;
+  margin-bottom: 0.3rem;
+}
+
+.plant-notes p {
+  color: #6b5e52;
+  margin: 0;
+}
+
+.growth-timeline h4 {
+  color: #4a3f3a;
+  margin-bottom: 0.5rem;
+}
+
+.timeline-list {
+  max-height: 200px;
+  overflow-y: auto;
+  margin-bottom: 0.8rem;
+}
+
+.timeline-item {
+  display: flex;
+  gap: 1rem;
+  padding: 0.3rem 0;
+  border-bottom: 1px solid #f5ede4;
+  font-size: 0.9rem;
+}
+
+.timeline-date {
+  color: #9a8a7a;
+  min-width: 100px;
+}
+
+.timeline-height {
+  color: #4a3f3a;
+  font-weight: 500;
+}
+
+.timeline-notes {
+  color: #6b5e52;
+}
+
+.no-timeline {
+  color: #9a8a7a;
+  font-style: italic;
+}
+
+.add-timeline {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.add-timeline input {
+  padding: 0.4rem 1rem;
+  border: 1px solid #e5dbd1;
+  border-radius: 30px;
+  flex: 1;
+  min-width: 120px;
+}
+
+.add-timeline input:focus {
+  outline: none;
+  border-color: #b8a9c9;
+}
+
+.add-timeline .btn-primary {
+  padding: 0.4rem 1.5rem;
+}
