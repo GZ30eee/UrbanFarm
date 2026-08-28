@@ -7,7 +7,9 @@ exports.getCropRecommendations = async (req, res, next) => {
   try {
     const { soilType, ph, temperature, humidity, rainfall, season, region } = req.body;
 
-    // Call OpenAI service
+    console.log('🌾 Getting crop recommendations for:', { soilType, ph, temperature });
+
+    // Call Gemini service
     const recommendations = await getRecommendations({
       soilType,
       ph,
@@ -25,12 +27,15 @@ exports.getCropRecommendations = async (req, res, next) => {
       recommendations,
     });
 
+    console.log('✅ Crop recommendations saved');
+
     res.status(200).json({
       success: true,
       recommendations,
       historyId: cropRec._id,
     });
   } catch (error) {
+    console.error('❌ Crop recommendation error:', error);
     next(error);
   }
 };
