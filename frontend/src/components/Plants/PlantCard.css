@@ -1,0 +1,256 @@
+.plant-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 1.2rem 1.5rem 1rem;
+  box-shadow: 0 4px 16px rgba(160, 140, 120, 0.06);
+  border: 1px solid #f5ede4;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.plant-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(160, 140, 120, 0.12);
+}
+
+.plant-card.selected {
+  border-color: #b8a9c9;
+  background: #f8f5fb;
+}
+
+/* Selection checkbox */
+.plant-select {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  z-index: 2;
+}
+
+.plant-select input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: #b8a9c9;
+}
+
+/* Menu */
+.plant-menu {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  z-index: 2;
+}
+
+.menu-btn {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  color: #9a8a7a;
+  cursor: pointer;
+  padding: 0.2rem 0.4rem;
+  border-radius: 8px;
+}
+
+.menu-btn:hover {
+  background: #f5ede4;
+  color: #4a3f3a;
+}
+
+.menu-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(160, 140, 120, 0.15);
+  padding: 0.3rem;
+  min-width: 140px;
+  z-index: 10;
+  border: 1px solid #f5ede4;
+}
+
+.menu-dropdown button {
+  display: block;
+  width: 100%;
+  padding: 0.4rem 1rem;
+  border: none;
+  background: none;
+  text-align: left;
+  border-radius: 8px;
+  color: #4a3f3a;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: 0.2s;
+}
+
+.menu-dropdown button:hover {
+  background: #faf6f0;
+}
+
+.menu-dropdown button.danger {
+  color: #e8b4b4;
+}
+
+.menu-dropdown button.danger:hover {
+  background: #fdf5f5;
+}
+
+/* Image */
+.plant-image {
+  width: 100%;
+  height: 120px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.8rem;
+  overflow: hidden;
+}
+
+.plant-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.plant-emoji-large {
+  font-size: 3rem;
+}
+
+/* Info */
+.plant-name {
+  color: #4a3f3a;
+  margin: 0 0 0.1rem 0;
+  font-size: 1.05rem;
+}
+
+.plant-variety {
+  color: #6b5e52;
+  font-size: 0.85rem;
+  font-style: italic;
+}
+
+.plant-scientific {
+  color: #9a8a7a;
+  font-size: 0.75rem;
+  display: block;
+}
+
+/* Badges */
+.plant-badges {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  margin: 0.4rem 0 0.6rem 0;
+}
+
+.health-badge {
+  font-size: 0.75rem;
+  padding: 0.1rem 0.6rem;
+  border-radius: 20px;
+  background: #f5ede4;
+}
+
+.status-badge {
+  font-size: 0.75rem;
+  padding: 0.1rem 0.6rem;
+  border-radius: 20px;
+  font-weight: 500;
+}
+
+.age-badge {
+  font-size: 0.75rem;
+  padding: 0.1rem 0.6rem;
+  border-radius: 20px;
+  background: #f0e8dc;
+  color: #6b5e52;
+}
+
+/* Growth Progress */
+.growth-progress {
+  margin: 0.5rem 0 0.6rem 0;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 4px;
+  background: #f5ede4;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: 10px;
+  transition: width 0.6s ease;
+}
+
+.progress-label {
+  font-size: 0.65rem;
+  color: #9a8a7a;
+  display: block;
+  margin-top: 0.1rem;
+}
+
+/* Meta */
+.plant-meta {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  font-size: 0.75rem;
+  color: #6b5e52;
+  margin-bottom: 0.6rem;
+}
+
+.plant-garden {
+  background: #faf6f0;
+  padding: 0.05rem 0.5rem;
+  border-radius: 10px;
+}
+
+.plant-water {
+  background: #faf6f0;
+  padding: 0.05rem 0.5rem;
+  border-radius: 10px;
+}
+
+.plant-sunlight {
+  font-size: 0.8rem;
+}
+
+/* Actions */
+.plant-actions {
+  display: flex;
+  gap: 0.5rem;
+  border-top: 1px solid #f5ede4;
+  padding-top: 0.6rem;
+}
+
+.action-btn {
+  flex: 1;
+  padding: 0.3rem 0.2rem;
+  border: none;
+  border-radius: 8px;
+  background: none;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.2s;
+  color: #9a8a7a;
+}
+
+.action-btn:hover {
+  background: #f5ede4;
+  color: #4a3f3a;
+}
+
+.action-btn.view:hover {
+  color: #6a8aaa;
+}
+
+.action-btn.water:hover {
+  color: #4a8a6a;
+}
+
+.action-btn.diagnose:hover {
+  color: #9a6aaa;
+}
