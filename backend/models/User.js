@@ -8,10 +8,18 @@ const UserSchema = new mongoose.Schema(
       required: [true, 'Please add a name'],
       trim: true,
     },
+    // Remove the username field or make it not required and not unique
+    // If you want to keep username, add it properly
+    username: {
+      type: String,
+      sparse: true, // This allows multiple null values
+      unique: false, // Remove unique constraint
+      trim: true,
+    },
     email: {
       type: String,
       required: [true, 'Please add an email'],
-      unique: true,
+      unique: true, // KEEP THIS - email should be unique
       lowercase: true,
       match: [/^\S+@\S+\.\S+$/, 'Please enter a valid email'],
     },
@@ -52,15 +60,26 @@ const UserSchema = new mongoose.Schema(
 
 // Hash password before saving
 UserSchema.pre('save', async function (next) {
-  if (!this.isModified('password')) return next();
-  const salt = await bcrypt.genSalt(10);
-  this.password = await bcrypt.hash(this.password, salt);
-  next();
+  if (!this.isModified('password')) {
+    return next();
+  }
+  
+  try {
+    const salt = await bcrypt.genSalt(10);
+    this.password = await bcrypt.hash(this.password, salt);
+    next();
+  } catch (error) {
+    next(error);
+  }
 });
 
 // Compare password method
 UserSchema.methods.matchPassword = async function (enteredPassword) {
-  return await bcrypt.compare(enteredPassword, this.password);
+  try {
+    return await bcrypt.compare(enteredPassword, this.password);
+  } catch (error) {
+    return false;
+  }
 };
 
 module.exports = mongoose.model('User', UserSchema);
