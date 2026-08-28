@@ -1,0 +1,129 @@
+.today-tasks {
+  background: #ffffff;
+  padding: 1.2rem 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(160, 140, 120, 0.06);
+  margin-bottom: 1.5rem;
+}
+
+.tasks-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.tasks-header h3 {
+  color: #4a3f3a;
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.task-count {
+  font-size: 0.8rem;
+  color: #9a8a7a;
+  background: #f5ede4;
+  padding: 0.1rem 0.8rem;
+  border-radius: 12px;
+}
+
+.task-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #f5ede4;
+}
+
+.task-item:last-child {
+  border-bottom: none;
+}
+
+.task-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.task-priority {
+  font-size: 0.8rem;
+}
+
+.task-title {
+  color: #4a3f3a;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.task-plant {
+  font-size: 0.75rem;
+  color: #6b5e52;
+  background: #faf6f0;
+  padding: 0.05rem 0.5rem;
+  border-radius: 10px;
+}
+
+.task-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.task-due {
+  font-size: 0.7rem;
+  color: #e8b4b4;
+  background: #fdf5f5;
+  padding: 0.05rem 0.6rem;
+  border-radius: 10px;
+}
+
+.task-due:not(:contains('Overdue')) {
+  color: #a8d5ba;
+  background: #f2faf5;
+}
+
+.task-complete-btn {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid #d4c5b2;
+  background: none;
+  color: #d4c5b2;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.task-complete-btn:hover {
+  border-color: #a8d5ba;
+  background: #a8d5ba;
+  color: white;
+}
+
+.no-tasks {
+  text-align: center;
+  padding: 1rem 0;
+  color: #9a8a7a;
+}
+
+.no-tasks-icon {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+.no-tasks p {
+  margin: 0;
+  font-size: 0.9rem;
+}
