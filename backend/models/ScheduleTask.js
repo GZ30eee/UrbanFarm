@@ -10,17 +10,25 @@ const ScheduleTaskSchema = new mongoose.Schema(
     plantId: {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'Plant',
+      // ✅ Allow null
+      default: null,
     },
     gardenId: {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'Garden',
+      // ✅ Allow null
+      default: null,
     },
     title: {
       type: String,
       required: true,
       trim: true,
     },
-    description: String,
+    description: {
+      type: String,
+      default: '',
+      trim: true,
+    },
     type: {
       type: String,
       enum: ['watering', 'fertilizing', 'planting', 'harvesting', 'pruning', 'pest_check', 'other'],
