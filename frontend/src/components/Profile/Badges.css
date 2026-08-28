@@ -1,30 +1,147 @@
 .badges-section {
-  margin-top: 2.5rem;
+  margin-top: 2rem;
   padding-top: 1.5rem;
   border-top: 2px dashed #f0e8dc;
 }
 
+.badges-loading {
+  text-align: center;
+  padding: 1rem;
+  color: #9a8a7a;
+}
+
 .badges-section h3 {
   color: #4a3f3a;
-  font-weight: 500;
-  margin-bottom: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+}
+
+.badges-subtitle {
+  color: #6b5e52;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
 }
 
 .badges-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.8rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
 }
 
 .badge-item {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem 1.2rem;
   background: #faf6f0;
-  padding: 0.4rem 1.2rem;
-  border-radius: 30px;
-  font-size: 0.9rem;
-  color: #4a3f3a;
-  border: 1.5px solid #f0d5c0;
-  box-shadow: 0 2px 8px rgba(160, 140, 120, 0.06);
-  display: inline-flex;
+  border-radius: 16px;
+  transition: 0.2s;
+  border: 2px solid transparent;
+}
+
+.badge-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(160, 140, 120, 0.08);
+}
+
+.badge-item.unlocked {
+  background: #f3edf7;
+  border-color: #b8a9c9;
+}
+
+.badge-item.locked {
+  opacity: 0.7;
+}
+
+.badge-icon-container {
+  position: relative;
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  display: flex;
   align-items: center;
-  gap: 0.3rem;
+  justify-content: center;
+}
+
+.badge-icon {
+  font-size: 2rem;
+}
+
+.badge-check {
+  position: absolute;
+  bottom: -4px;
+  right: -4px;
+  font-size: 0.8rem;
+}
+
+.badge-lock {
+  position: absolute;
+  bottom: -4px;
+  right: -4px;
+  font-size: 0.7rem;
+}
+
+.badge-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.badge-name {
+  color: #4a3f3a;
+  margin: 0 0 0.1rem 0;
+  font-size: 0.95rem;
+}
+
+.badge-description {
+  color: #6b5e52;
+  font-size: 0.8rem;
+  margin: 0 0 0.2rem 0;
+}
+
+.badge-requirement {
+  color: #9a8a7a;
+  font-size: 0.7rem;
+  margin: 0;
+}
+
+.badge-progress {
+  margin-top: 0.3rem;
+}
+
+.badge-progress .progress-bar {
+  width: 100%;
+  height: 4px;
+  background: #f0e8dc;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.badge-progress .progress-fill {
+  height: 100%;
+  border-radius: 10px;
+  transition: width 0.6s ease;
+}
+
+.badge-progress .progress-text {
+  font-size: 0.65rem;
+  color: #9a8a7a;
+  display: block;
+  margin-top: 0.1rem;
+}
+
+.badges-empty {
+  text-align: center;
+  padding: 2rem 0;
+  color: #9a8a7a;
+}
+
+.badges-empty span {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.badges-empty small {
+  display: block;
+  font-size: 0.8rem;
+  opacity: 0.7;
 }
