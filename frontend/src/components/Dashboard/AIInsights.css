@@ -1,0 +1,48 @@
+.ai-insight {
+  background: #ffffff;
+  padding: 1rem 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(160, 140, 120, 0.06);
+  margin-bottom: 1.5rem;
+  border-left: 4px solid #b8a9c9;
+}
+
+.ai-insight.warning {
+  border-left-color: #f0c0a0;
+  background: #fff8f5;
+}
+
+.ai-insight.success {
+  border-left-color: #a8d5ba;
+  background: #f5faf7;
+}
+
+.ai-insight.info {
+  border-left-color: #b8a9c9;
+}
+
+.insight-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.3rem;
+}
+
+.insight-icon {
+  font-size: 1.2rem;
+}
+
+.insight-badge {
+  font-size: 0.7rem;
+  background: #f5ede4;
+  padding: 0.1rem 0.6rem;
+  border-radius: 12px;
+  color: #6b5e52;
+  font-weight: 500;
+}
+
+.insight-text {
+  color: #4a3f3a;
+  margin: 0;
+  font-size: 0.95rem;
+}
