@@ -1,6 +1,10 @@
 const express = require('express');
 const router = express.Router();
-const { getCropRecommendations, getRecommendationHistory, saveRecommendation } = require('../controllers/cropController');
+const { 
+  getCropRecommendations, 
+  getRecommendationHistory, 
+  saveRecommendation 
+} = require('../controllers/cropController');
 const { protect } = require('../middleware/authMiddleware');
 const { aiLimiter } = require('../middleware/rateLimiter');
 
