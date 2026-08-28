@@ -1,29 +1,111 @@
 .dashboard {
   padding: 1.5rem 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
-.dashboard h1 {
+.dashboard-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  gap: 1rem;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #f5ede4;
+  border-top: 4px solid #b8a9c9;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Dashboard Header */
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.header-left h1 {
   color: #4a3f3a;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
+  font-size: 1.8rem;
+  margin-bottom: 0.2rem;
 }
 
-.dashboard .stats-grid {
+.header-subtitle {
+  color: #6b5e52;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+/* Stats Grid */
+.stats-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 1.5rem;
-  margin: 1.8rem 0 2.5rem 0;
+  margin: 1.5rem 0;
 }
 
-.dashboard .recent-activity {
+/* Main Content Layout */
+.dashboard-main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 1024px) {
+  .dashboard-main {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard {
+    padding: 1rem;
+  }
+  
+  .dashboard-header {
+    flex-direction: column;
+  }
+  
+  .header-left h1 {
+    font-size: 1.4rem;
+  }
+}
+
+.dashboard-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard-right {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Recent Activity Section */
+.recent-activity-section {
   background: #ffffff;
-  padding: 1.5rem 2rem;
+  padding: 1.2rem 1.5rem;
   border-radius: 16px;
-  box-shadow: 0 4px 16px rgba(160, 140, 120, 0.08);
+  box-shadow: 0 2px 12px rgba(160, 140, 120, 0.06);
 }
 
-.dashboard .recent-activity h3 {
+.recent-activity-section h3 {
   color: #4a3f3a;
-  margin-bottom: 1rem;
-  font-weight: 500;
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 1rem 0;
 }
