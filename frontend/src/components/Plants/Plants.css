@@ -1,0 +1,87 @@
+.plants-page {
+  padding: 1.5rem;
+}
+
+.plants-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  color: #6b5e52;
+}
+
+.plants-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.header-left h2 {
+  color: #4a3f3a;
+  margin: 0;
+}
+
+.plant-count {
+  font-size: 0.85rem;
+  color: #9a8a7a;
+  background: #f5ede4;
+  padding: 0.1rem 0.8rem;
+  border-radius: 20px;
+}
+
+.header-actions {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Plants Grid */
+.plants-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+@media (max-width: 600px) {
+  .plants-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .plants-page {
+    padding: 1rem;
+  }
+}
+
+/* No Results */
+.no-results {
+  text-align: center;
+  padding: 3rem 2rem;
+  background: #faf6f0;
+  border-radius: 16px;
+}
+
+.no-results-icon {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.no-results h3 {
+  color: #4a3f3a;
+  margin-bottom: 0.3rem;
+}
+
+.no-results p {
+  color: #6b5e52;
+  margin-bottom: 1rem;
+}
