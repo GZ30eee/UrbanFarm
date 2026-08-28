@@ -1,0 +1,120 @@
+.leaderboard-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.leaderboard-content {
+  background: #ffffff;
+  border-radius: 20px;
+  max-width: 500px;
+  width: 100%;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+}
+
+.leaderboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 1.5rem;
+  border-bottom: 1px solid #f0e8dc;
+  position: sticky;
+  top: 0;
+  background: #ffffff;
+  border-radius: 20px 20px 0 0;
+}
+
+.leaderboard-header h3 {
+  color: #4a3f3a;
+  margin: 0;
+}
+
+.leaderboard-header .close-btn {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  color: #9a8a7a;
+  cursor: pointer;
+  padding: 0.2rem;
+}
+
+.leaderboard-list {
+  padding: 0.5rem 1.5rem 1.5rem;
+}
+
+.leaderboard-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.6rem 0.8rem;
+  border-radius: 12px;
+  transition: 0.2s;
+}
+
+.leaderboard-item:hover {
+  background: #faf6f0;
+}
+
+.leaderboard-item.top {
+  background: #f8f5fb;
+}
+
+.rank {
+  font-size: 1.2rem;
+  min-width: 40px;
+  text-align: center;
+}
+
+.user-info {
+  flex: 1;
+}
+
+.user-name {
+  font-weight: 600;
+  color: #4a3f3a;
+}
+
+.user-level {
+  font-size: 0.7rem;
+  color: #6b5e52;
+  display: block;
+}
+
+.user-stats {
+  display: flex;
+  gap: 0.8rem;
+  font-size: 0.85rem;
+  color: #6b5e52;
+}
+
+.user-points {
+  font-weight: 600;
+  color: #b8a9c9;
+}
+
+.empty-leaderboard {
+  text-align: center;
+  padding: 2rem;
+  color: #9a8a7a;
+}
+
+.empty-leaderboard span {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.empty-leaderboard .sub-text {
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
