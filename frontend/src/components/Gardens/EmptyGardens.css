@@ -1,0 +1,116 @@
+.empty-gardens {
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.empty-content {
+  max-width: 500px;
+  text-align: center;
+}
+
+.empty-illustration {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.empty-icon {
+  font-size: 5rem;
+  display: block;
+  animation: bounce 2s ease-in-out infinite;
+}
+
+.plant-pots {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.pot {
+  font-size: 2rem;
+  animation: sway 3s ease-in-out infinite;
+}
+
+.pot:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+.pot:nth-child(3) {
+  animation-delay: 1s;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes sway {
+  0%, 100% { transform: rotate(-5deg); }
+  50% { transform: rotate(5deg); }
+}
+
+.empty-content h2 {
+  color: #4a3f3a;
+  margin-bottom: 0.5rem;
+}
+
+.empty-content p {
+  color: #6b5e52;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.empty-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.btn-secondary {
+  background: #f5ede4;
+  border: none;
+  padding: 0.6rem 1.8rem;
+  border-radius: 30px;
+  color: #4a3f3a;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: 0.2s;
+  font-weight: 500;
+}
+
+.btn-secondary:hover {
+  background: #e5dbd1;
+}
+
+.empty-tips {
+  background: #faf6f0;
+  padding: 1.5rem;
+  border-radius: 16px;
+  text-align: left;
+}
+
+.empty-tips h4 {
+  color: #4a3f3a;
+  margin-bottom: 0.5rem;
+}
+
+.empty-tips ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.empty-tips li {
+  padding: 0.3rem 0;
+  color: #6b5e52;
+  font-size: 0.9rem;
+}
+
+.empty-tips li::before {
+  content: '✨ ';
+}
