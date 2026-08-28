@@ -1,0 +1,16 @@
+.garden-form .modal-content {
+  max-width: 520px;
+}
+
+.garden-form .form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+@media (max-width: 450px) {
+  .garden-form .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}
