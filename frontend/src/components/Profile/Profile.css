@@ -3,29 +3,190 @@
   padding: 1.8rem 2.2rem;
   border-radius: 20px;
   box-shadow: 0 4px 16px rgba(160, 140, 120, 0.08);
-  max-width: 600px;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
-.profile-page h2 {
-  color: #4a3f3a;
+.profile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
-.profile-view p {
-  padding: 0.4rem 0;
-  border-bottom: 1px solid #f0e8dc;
-}
-
-.profile-view strong {
+.profile-header h2 {
   color: #4a3f3a;
-  min-width: 130px;
-  display: inline-block;
+  margin: 0;
 }
 
-.profile-view .btn-primary {
-  margin-top: 1.2rem;
+.btn-edit {
+  padding: 0.4rem 1.5rem;
+  border: 1.5px solid #e5dbd1;
+  border-radius: 30px;
+  background: none;
+  color: #6b5e52;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: 0.2s;
 }
 
+.btn-edit:hover {
+  border-color: #b8a9c9;
+  background: #faf6f0;
+}
+
+.btn-edit.active {
+  border-color: #b8a9c9;
+  background: #b8a9c9;
+  color: white;
+}
+
+/* Profile View */
+.profile-view {
+  margin-top: 0.5rem;
+}
+
+.profile-info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem 2rem;
+}
+
+@media (max-width: 600px) {
+  .profile-info-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+  padding: 0.4rem 0;
+  border-bottom: 1px solid #f5ede4;
+}
+
+.info-label {
+  font-size: 0.75rem;
+  color: #9a8a7a;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.info-value {
+  font-size: 1rem;
+  color: #4a3f3a;
+  font-weight: 500;
+  margin-top: 0.1rem;
+}
+
+.profile-tip {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background: #f3edf7;
+  border-radius: 12px;
+  color: #4a3f3a;
+  font-size: 0.9rem;
+}
+
+/* Profile Form */
 .profile-form {
   margin-top: 0.5rem;
+}
+
+.form-section {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #f5ede4;
+}
+
+.form-section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.form-section h4 {
+  color: #4a3f3a;
+  margin: 0 0 0.8rem 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.profile-form .form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+@media (max-width: 500px) {
+  .profile-form .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.profile-form .form-group {
+  margin-bottom: 0.8rem;
+}
+
+.profile-form .form-group label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #4a3f3a;
+  margin-bottom: 0.2rem;
+}
+
+.profile-form .form-group input,
+.profile-form .form-group select {
+  width: 100%;
+  padding: 0.5rem 0.8rem;
+  border: 1.5px solid #e5dbd1;
+  border-radius: 10px;
+  background: #ffffff;
+  font-size: 0.9rem;
+  transition: 0.2s;
+}
+
+.profile-form .form-group input:focus,
+.profile-form .form-group select:focus {
+  outline: none;
+  border-color: #b8a9c9;
+}
+
+.profile-form .form-group small {
+  display: block;
+  font-size: 0.75rem;
+  color: #9a8a7a;
+  margin-top: 0.2rem;
+}
+
+.profile-form .form-group.checkbox {
+  display: flex;
+  align-items: center;
+}
+
+.profile-form .form-group.checkbox label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: normal;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.profile-form .form-group.checkbox input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #b8a9c9;
+  cursor: pointer;
+}
+
+.form-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #f5ede4;
 }
