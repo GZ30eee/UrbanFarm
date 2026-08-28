@@ -121,3 +121,55 @@ exports.toggleLike = async (req, res, next) => {
     next(error);
   }
 };
+
+// Add this function to communityController.js
+
+// @desc    Get leaderboard
+// @route   GET /api/community/leaderboard
+exports.getLeaderboard = async (req, res, next) => {
+  try {
+    // Aggregate users with their post and like counts
+    const leaderboard = await User.aggregate([
+      {
+        $lookup: {
+          from: 'communityposts',
+          localField: '_id',
+          foreignField: 'userId',
+          as: 'posts'
+        }
+      },
+      {
+        $project: {
+          name: 1,
+          profilePicture: 1,
+          postCount: { $size: '$posts' },
+          likeCount: {
+            $sum: {
+              $map: {
+                input: '$posts',
+                as: 'post',
+                in: { $size: '$$post.likes' }
+              }
+            }
+          }
+        }
+      },
+      {
+        $addFields: {
+          points: {
+            $add: [
+              { $multiply: ['$postCount', 10] },
+              { $multiply: ['$likeCount', 2] }
+            ]
+          }
+        }
+      },
+      { $sort: { points: -1 } },
+      { $limit: 10 }
+    ]);
+    
+    res.status(200).json({ success: true, leaderboard });
+  } catch (error) {
+    next(error);
+  }
+};
