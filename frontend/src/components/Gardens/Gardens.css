@@ -1,0 +1,129 @@
+.gardens-page {
+  padding: 1.5rem;
+}
+
+.gardens-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.gardens-header h2 {
+  color: #4a3f3a;
+  margin: 0;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: #faf6f0;
+  border-radius: 20px;
+}
+
+.empty-icon {
+  font-size: 4rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.empty-state h3 {
+  color: #4a3f3a;
+  margin-bottom: 0.5rem;
+}
+
+.empty-state p {
+  color: #6b5e52;
+  margin-bottom: 1.5rem;
+}
+
+.gardens-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.garden-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 16px rgba(160, 140, 120, 0.08);
+  border: 1px solid #f5ede4;
+  transition: 0.2s;
+}
+
+.garden-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(160, 140, 120, 0.12);
+}
+
+.garden-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.5rem;
+}
+
+.garden-card-header h3 {
+  color: #4a3f3a;
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.garden-description {
+  color: #6b5e52;
+  font-size: 0.9rem;
+  margin: 0.5rem 0;
+  line-height: 1.4;
+}
+
+.garden-location {
+  font-size: 0.85rem;
+  color: #6b5e52;
+  margin: 0.3rem 0;
+}
+
+.garden-stats {
+  display: flex;
+  gap: 1rem;
+  margin: 0.8rem 0 1rem 0;
+  font-size: 0.9rem;
+  color: #6b5e52;
+}
+
+.garden-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.btn-danger-small {
+  background: none;
+  border: none;
+  color: #c9b0a0;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0 0.2rem;
+  transition: 0.2s;
+}
+
+.btn-danger-small:hover {
+  color: #e8b4b4;
+}
+
+.btn-secondary-small {
+  background: #f5ede4;
+  border: none;
+  padding: 0.3rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  color: #4a3f3a;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn-secondary-small:hover {
+  background: #e5dbd1;
+}
