@@ -12,6 +12,7 @@ const scheduleRoutes = require('./scheduleRoutes');
 const communityRoutes = require('./communityRoutes');
 const adminRoutes = require('./adminRoutes');
 const uploadRoutes = require('./uploadRoutes');
+const weatherRoutes = require('./weatherRoutes'); // ✅ Add this
 
 router.use('/auth', authRoutes);
 router.use('/users', userRoutes);
@@ -24,5 +25,6 @@ router.use('/schedule', scheduleRoutes);
 router.use('/community', communityRoutes);
 router.use('/admin', adminRoutes);
 router.use('/upload', uploadRoutes);
+router.use('/weather', weatherRoutes); // ✅ Add this
 
 module.exports = router;
