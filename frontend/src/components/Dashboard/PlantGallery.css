@@ -1,0 +1,150 @@
+.plant-gallery {
+  background: #ffffff;
+  padding: 1.2rem 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(160, 140, 120, 0.06);
+  margin-bottom: 1.5rem;
+}
+
+.gallery-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.gallery-header h3 {
+  color: #4a3f3a;
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.plant-count {
+  font-size: 0.8rem;
+  color: #9a8a7a;
+  background: #f5ede4;
+  padding: 0.1rem 0.8rem;
+  border-radius: 12px;
+}
+
+.gallery-scroll {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  padding: 0.5rem 0.2rem 0.8rem 0.2rem;
+  scrollbar-width: thin;
+}
+
+.gallery-scroll::-webkit-scrollbar {
+  height: 4px;
+}
+
+.gallery-scroll::-webkit-scrollbar-track {
+  background: #f5ede4;
+  border-radius: 10px;
+}
+
+.gallery-scroll::-webkit-scrollbar-thumb {
+  background: #d4c5b2;
+  border-radius: 10px;
+}
+
+.gallery-item {
+  flex: 0 0 100px;
+  cursor: pointer;
+  transition: 0.2s;
+  text-align: center;
+}
+
+.gallery-item:hover {
+  transform: translateY(-4px);
+}
+
+.plant-thumbnail {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 2px solid #f5ede4;
+}
+
+.plant-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.plant-emoji {
+  font-size: 2rem;
+}
+
+.plant-name {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #4a3f3a;
+  margin-top: 0.3rem;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100px;
+}
+
+.plant-meta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.7rem;
+  color: #6b5e52;
+}
+
+.plant-status {
+  background: #f5ede4;
+  padding: 0.05rem 0.5rem;
+  border-radius: 10px;
+  font-size: 0.6rem;
+  text-transform: capitalize;
+}
+
+.gallery-more {
+  flex: 0 0 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: #faf6f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 2px dashed #d4c5b2;
+  color: #9a8a7a;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.gallery-more:hover {
+  background: #f5ede4;
+  border-color: #b8a9c9;
+}
+
+.empty-gallery {
+  text-align: center;
+  padding: 1.5rem 0;
+}
+
+.empty-icon {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.empty-gallery p {
+  color: #9a8a7a;
+  margin-bottom: 0.8rem;
+  font-size: 0.9rem;
+}
