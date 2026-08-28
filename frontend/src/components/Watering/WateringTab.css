@@ -1,13 +1,42 @@
 .watering-tab {
+  padding: 1.5rem;
   background: #ffffff;
-  padding: 1.8rem;
   border-radius: 20px;
   box-shadow: 0 4px 16px rgba(160, 140, 120, 0.08);
 }
 
 .watering-tab h2 {
   color: #4a3f3a;
-  margin-bottom: 1.2rem;
+  margin-bottom: 0.2rem;
+}
+
+.watering-tab .subtitle {
+  color: #6b5e52;
+  margin-bottom: 1.5rem;
+}
+
+.watering-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+@media (max-width: 768px) {
+  .watering-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.watering-left {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.watering-generate-section {
+  background: #faf6f0;
+  padding: 1.5rem;
+  border-radius: 16px;
 }
 
 .plant-selector {
@@ -15,10 +44,6 @@
   flex-wrap: wrap;
   align-items: center;
   gap: 1rem;
-  margin-bottom: 2rem;
-  background: #faf6f0;
-  padding: 1rem 1.5rem;
-  border-radius: 16px;
 }
 
 .plant-selector label {
@@ -27,11 +52,99 @@
 }
 
 .plant-selector select {
+  flex: 1;
   padding: 0.5rem 1.2rem;
   border-radius: 30px;
   border: 1px solid #e5dbd1;
   background: white;
   font-size: 1rem;
-  flex: 1;
   min-width: 150px;
+}
+
+.plant-selector select:focus {
+  outline: none;
+  border-color: #b8a9c9;
+}
+
+.bulk-controls {
+  background: #faf6f0;
+  padding: 1rem 1.5rem;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.controls-label {
+  font-weight: 500;
+  color: #4a3f3a;
+  font-size: 0.9rem;
+}
+
+.control-btn {
+  padding: 0.3rem 1rem;
+  border: none;
+  border-radius: 30px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: 0.2s;
+  font-weight: 500;
+}
+
+.control-btn.hot {
+  background: #f0d5c0;
+  color: #5a4a3a;
+}
+
+.control-btn.hot:hover {
+  background: #e8c4a8;
+}
+
+.control-btn.rain {
+  background: #d6eaf8;
+  color: #2a4a5a;
+}
+
+.control-btn.rain:hover {
+  background: #b8d8e8;
+}
+
+.watering-schedule-section {
+  background: #faf6f0;
+  padding: 1.5rem;
+  border-radius: 16px;
+}
+
+.watering-history-detail {
+  background: #faf6f0;
+  padding: 1.5rem;
+  border-radius: 16px;
+}
+
+.watering-history-detail .btn-secondary {
+  margin-top: 1rem;
+}
+
+/* Right Column - History */
+.watering-right {
+  background: #faf6f0;
+  padding: 1.5rem;
+  border-radius: 16px;
+  max-height: 800px;
+  overflow-y: auto;
+}
+
+.watering-right::-webkit-scrollbar {
+  width: 6px;
+}
+
+.watering-right::-webkit-scrollbar-track {
+  background: #f5ede4;
+  border-radius: 10px;
+}
+
+.watering-right::-webkit-scrollbar-thumb {
+  background: #d4c5b2;
+  border-radius: 10px;
 }
