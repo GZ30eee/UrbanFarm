@@ -11,9 +11,14 @@ export const AuthProvider = ({ children }) => {
     const token = localStorage.getItem('token');
     if (token) {
       getCurrentUser()
-        .then((userData) => setUser(userData))
+        .then((userData) => {
+          console.log('Current user data:', userData);
+          console.log('User role:', userData?.role);
+          setUser(userData);
+        })
         .catch(() => {
           localStorage.removeItem('token');
+          localStorage.removeItem('user');
           setUser(null);
         })
         .finally(() => setLoading(false));
@@ -26,16 +31,23 @@ export const AuthProvider = ({ children }) => {
     localStorage.setItem('token', token);
     localStorage.setItem('user', JSON.stringify(userData));
     setUser(userData);
+    console.log('✅ User logged in:', userData.email, 'Role:', userData.role);
   };
 
   const logout = () => {
     localStorage.removeItem('token');
     localStorage.removeItem('user');
     setUser(null);
+    console.log('👋 User logged out');
+  };
+
+  // ✅ Helper to check if user is admin
+  const isAdmin = () => {
+    return user?.role === 'admin';
   };
 
   return (
-    <AuthContext.Provider value={{ user, loading, login, logout }}>
+    <AuthContext.Provider value={{ user, loading, login, logout, isAdmin }}>
       {children}
     </AuthContext.Provider>
   );
