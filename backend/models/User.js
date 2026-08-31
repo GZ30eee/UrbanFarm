@@ -8,18 +8,15 @@ const UserSchema = new mongoose.Schema(
       required: [true, 'Please add a name'],
       trim: true,
     },
-    // Remove the username field or make it not required and not unique
-    // If you want to keep username, add it properly
     username: {
       type: String,
-      sparse: true, // This allows multiple null values
-      unique: false, // Remove unique constraint
       trim: true,
+      sparse: true,
     },
     email: {
       type: String,
       required: [true, 'Please add an email'],
-      unique: true, // KEEP THIS - email should be unique
+      unique: true,
       lowercase: true,
       match: [/^\S+@\S+\.\S+$/, 'Please enter a valid email'],
     },
@@ -52,32 +49,67 @@ const UserSchema = new mongoose.Schema(
       type: Boolean,
       default: true,
     },
+    climateZone: String,
+    urbanSpaceType: String,
+    preferences: {
+      showAdvancedTips: {
+        type: Boolean,
+        default: false,
+      },
+      unitSystem: {
+        type: String,
+        enum: ['metric', 'imperial'],
+        default: 'metric',
+      },
+      notificationPreferences: {
+        wateringReminders: { type: Boolean, default: true },
+        diagnosisAlerts: { type: Boolean, default: true },
+        communityUpdates: { type: Boolean, default: true },
+        weatherAlerts: { type: Boolean, default: true },
+      },
+    },
   },
   {
     timestamps: true,
   }
 );
 
-// Hash password before saving
+// ✅ FIX: Hash password before saving
 UserSchema.pre('save', async function (next) {
+  // Only hash if password is modified
   if (!this.isModified('password')) {
     return next();
   }
   
   try {
+    console.log('🔐 Hashing password for:', this.email);
     const salt = await bcrypt.genSalt(10);
     this.password = await bcrypt.hash(this.password, salt);
+    console.log('✅ Password hashed successfully');
     next();
   } catch (error) {
+    console.error('❌ Password hashing error:', error);
     next(error);
   }
 });
 
-// Compare password method
+// ✅ FIX: Compare password method with better error handling
 UserSchema.methods.matchPassword = async function (enteredPassword) {
   try {
-    return await bcrypt.compare(enteredPassword, this.password);
+    console.log('🔐 Comparing passwords for:', this.email);
+    console.log('📝 Entered password length:', enteredPassword?.length || 0);
+    console.log('🔑 Stored hash exists:', !!this.password);
+    
+    if (!this.password) {
+      console.error('❌ No password stored for user');
+      return false;
+    }
+    
+    const isMatch = await bcrypt.compare(enteredPassword, this.password);
+    console.log('✅ Password match result:', isMatch);
+    return isMatch;
   } catch (error) {
+    console.error('❌ Password comparison error:', error);
     return false;
   }
 };
