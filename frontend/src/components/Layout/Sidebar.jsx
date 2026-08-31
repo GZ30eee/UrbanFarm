@@ -6,6 +6,11 @@ import './Sidebar.css';
 const Sidebar = () => {
   const { user } = useAuth();
 
+  // Hide the regular sidebar completely for admin users
+  if (user?.role === 'admin') {
+    return null;
+  }
+
   const links = [
     { to: '/app/dashboard', icon: '📊', label: 'Dashboard' },
     { to: '/app/gardens', icon: '🌿', label: 'Gardens' },
@@ -18,16 +23,15 @@ const Sidebar = () => {
     { to: '/app/profile', icon: '👤', label: 'Profile' },
   ];
 
-  if (user?.role === 'admin') {
-    links.push({ to: '/admin', icon: '🛡️', label: 'Admin' });
-  }
-
   return (
     <aside className="sidebar">
       <ul>
         {links.map((link) => (
           <li key={link.to}>
-            <NavLink to={link.to} className={({ isActive }) => (isActive ? 'active' : '')}>
+            <NavLink
+              to={link.to}
+              className={({ isActive }) => (isActive ? 'active' : '')}
+            >
               <span className="icon">{link.icon}</span>
               <span className="label">{link.label}</span>
             </NavLink>
