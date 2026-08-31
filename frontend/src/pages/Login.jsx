@@ -18,11 +18,38 @@ const Login = () => {
     setLoading(true);
     try {
       const data = await login({ email, password });
+      
+      // ✅ Log the response for debugging
+      console.log('🔐 Login response:', data);
+      console.log('👤 User data:', data.user);
+      console.log('👑 User role:', data.user?.role);
+      
+      // Store user in context
       authLogin(data.user, data.token);
-      addNotification('Welcome back!', 'success');
-      navigate('/app');
+      addNotification('Welcome back! 🌱', 'success');
+      
+      // ✅ Check role and redirect
+      if (data.user?.role === 'admin') {
+        console.log('🔐 Redirecting to admin panel...');
+        navigate('/admin');
+      } else {
+        console.log('🔐 Redirecting to user dashboard...');
+        navigate('/app');
+      }
     } catch (error) {
-      addNotification(error.response?.data?.message || 'Login failed', 'error');
+      console.error('❌ Login error:', error);
+      
+      if (error.response) {
+        console.error('Response data:', error.response.data);
+        const errorMessage = error.response.data?.message || 'Login failed';
+        addNotification(errorMessage, 'error');
+      } else if (error.request) {
+        console.error('No response received');
+        addNotification('Server not responding. Please try again.', 'error');
+      } else {
+        console.error('Error message:', error.message);
+        addNotification(error.message || 'Login failed', 'error');
+      }
     } finally {
       setLoading(false);
     }
@@ -31,21 +58,39 @@ const Login = () => {
   return (
     <div className="auth-page">
       <div className="auth-card">
-        <h2>Login</h2>
+        <h2>🌱 Welcome Back</h2>
+        <p className="auth-subtitle">Login to your urban farming dashboard</p>
         <form onSubmit={handleSubmit}>
           <div className="form-group">
             <label>Email</label>
-            <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+            <input 
+              type="email" 
+              value={email} 
+              onChange={(e) => setEmail(e.target.value)} 
+              placeholder="your@email.com"
+              required 
+            />
           </div>
           <div className="form-group">
             <label>Password</label>
-            <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
+            <input 
+              type="password" 
+              value={password} 
+              onChange={(e) => setPassword(e.target.value)} 
+              placeholder="••••••••"
+              required 
+            />
           </div>
           <button type="submit" className="btn-primary" disabled={loading}>
             {loading ? 'Logging in...' : 'Login'}
           </button>
         </form>
-        <p>Don't have an account? <Link to="/register">Register</Link></p>
+        <p className="auth-footer">
+          Don't have an account? <Link to="/register">Register here</Link>
+        </p>
+        <div className="auth-hint">
+          <small>💡 Admin login will redirect to admin panel automatically</small>
+        </div>
       </div>
     </div>
   );
