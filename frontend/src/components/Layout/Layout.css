@@ -5,6 +5,7 @@
   background: var(--background, #faf6f0);
 }
 
+/* Regular layout with sidebar */
 .main-content {
   display: flex;
   flex: 1;
@@ -18,10 +19,27 @@
   min-height: calc(100vh - 70px - 60px);
 }
 
+/* Admin layout without sidebar */
+.admin-layout .main-content {
+  padding-top: 70px;
+}
+
+.admin-layout .page-content {
+  margin-left: 0;
+  padding: 1.5rem 2rem 2rem 2rem;
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .page-content {
     margin-left: 0;
+    padding: 1rem;
+  }
+  
+  .admin-layout .page-content {
     padding: 1rem;
   }
 }
