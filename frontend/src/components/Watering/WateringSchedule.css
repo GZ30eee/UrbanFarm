@@ -1,3 +1,4 @@
+/* Watering Schedule */
 .watering-schedule {
   width: 100%;
 }
@@ -9,27 +10,33 @@
   flex-wrap: wrap;
   gap: 0.5rem;
   margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border-light, rgba(220, 210, 200, 0.4));
 }
 
 .schedule-header h3 {
-  color: #4a3f3a;
+  color: var(--text-main, #2c2421);
   margin: 0;
   font-weight: 500;
+  font-size: 1.05rem;
 }
 
 .weather-adjusted-badge {
   font-size: 0.75rem;
-  background: #d6eaf8;
+  background: rgba(176, 196, 222, 0.15);
   padding: 0.2rem 0.8rem;
   border-radius: 20px;
-  color: #2a4a5a;
+  color: var(--accent-blue, #b0c4de);
+  border: 1px solid rgba(176, 196, 222, 0.3);
+  font-weight: 500;
 }
 
 /* Soil Moisture */
 .soil-moisture {
-  background: #ffffff;
+  background: var(--surface-primary, #ffffff);
   padding: 0.8rem 1rem;
-  border-radius: 12px;
+  border-radius: var(--radius-md, 12px);
+  border: 1px solid var(--border-light, rgba(220, 210, 200, 0.4));
   margin-bottom: 1rem;
 }
 
@@ -37,7 +44,7 @@
   display: flex;
   justify-content: space-between;
   font-size: 0.85rem;
-  color: #4a3f3a;
+  color: var(--text-main, #2c2421);
 }
 
 .moisture-value {
@@ -45,31 +52,48 @@
 }
 
 .moisture-value.dry {
-  color: #e8b4b4;
+  color: #c8968c;
 }
 
 .moisture-value.good {
-  color: #a8d5ba;
+  color: var(--accent-sage, #8ea89d);
+}
+
+.moisture-value.wet {
+  color: var(--accent-blue, #b0c4de);
 }
 
 .moisture-bar {
   width: 100%;
   height: 4px;
-  background: #f5ede4;
+  background: var(--bg-primary, #fbf9f7);
   border-radius: 10px;
   overflow: hidden;
   margin-top: 0.2rem;
+  border: 1px solid var(--border-light, rgba(220, 210, 200, 0.4));
 }
 
 .moisture-fill {
   height: 100%;
   border-radius: 10px;
-  transition: width 0.6s ease;
+  transition: width 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.moisture-fill.dry {
+  background: #c8968c;
+}
+
+.moisture-fill.good {
+  background: var(--accent-sage, #8ea89d);
+}
+
+.moisture-fill.wet {
+  background: var(--accent-blue, #b0c4de);
 }
 
 .moisture-warning {
   font-size: 0.75rem;
-  color: #e8b4b4;
+  color: #c8968c;
   display: block;
   margin-top: 0.2rem;
 }
@@ -77,43 +101,49 @@
 /* Weather Override */
 .weather-override {
   padding: 0.5rem 0.8rem;
-  border-radius: 10px;
+  border-radius: var(--radius-md, 12px);
   margin-bottom: 0.8rem;
   display: flex;
   align-items: center;
   gap: 0.5rem;
   font-size: 0.85rem;
+  border: 1px solid transparent;
 }
 
 .weather-override.info {
-  background: #d6eaf8;
-  color: #2a4a5a;
+  background: rgba(176, 196, 222, 0.1);
+  border-color: rgba(176, 196, 222, 0.3);
+  color: var(--accent-blue, #b0c4de);
 }
 
 .weather-override.warning {
-  background: #f0d5c0;
-  color: #5a4a3a;
+  background: rgba(223, 177, 155, 0.1);
+  border-color: rgba(223, 177, 155, 0.3);
+  color: #dfb19b;
 }
 
 /* Missed Alert */
 .missed-alert {
-  background: #fdf5f5;
-  border-left: 3px solid #e8b4b4;
+  background: rgba(200, 150, 140, 0.06);
+  border-left: 3px solid #c8968c;
   padding: 0.5rem 0.8rem;
-  border-radius: 8px;
+  border-radius: var(--radius-md, 12px);
   margin-bottom: 0.8rem;
   font-size: 0.85rem;
-  color: #6a4a4a;
+  color: var(--text-muted, #7c6f66);
+  border: 1px solid rgba(200, 150, 140, 0.2);
+  border-left-width: 3px;
 }
 
 .missed-date {
   display: inline-block;
-  background: #e8b4b4;
-  color: white;
+  background: #c8968c;
+  color: #ffffff;
   padding: 0.05rem 0.5rem;
   border-radius: 10px;
   margin-left: 0.3rem;
   font-size: 0.75rem;
+  font-weight: 500;
 }
 
 /* Schedule Controls */
@@ -121,7 +151,7 @@
   display: flex;
   justify-content: space-between;
   font-size: 0.85rem;
-  color: #6b5e52;
+  color: var(--text-muted, #7c6f66);
   margin-bottom: 0.8rem;
 }
 
@@ -139,27 +169,32 @@
   justify-content: space-between;
   gap: 0.5rem;
   padding: 0.5rem 0.8rem;
-  border-bottom: 1px solid #f5ede4;
-  transition: 0.2s;
+  border-bottom: 1px solid var(--border-light, rgba(220, 210, 200, 0.4));
+  transition: var(--transition-smooth, all 0.3s cubic-bezier(0.16, 1, 0.3, 1));
 }
 
 .schedule-item:hover {
-  background: #ffffff;
-  border-radius: 8px;
+  background: var(--surface-primary, #ffffff);
+  border-radius: var(--radius-md, 12px);
 }
 
 .schedule-item.completed {
   opacity: 0.6;
 }
 
+.schedule-item.completed .schedule-date {
+  text-decoration: line-through;
+}
+
 .schedule-item.missed {
-  background: #fdf5f5;
-  border-radius: 8px;
+  background: rgba(200, 150, 140, 0.05);
+  border-radius: var(--radius-md, 12px);
 }
 
 .schedule-item.today {
-  background: #f3edf7;
-  border-radius: 8px;
+  background: rgba(168, 162, 188, 0.06);
+  border-radius: var(--radius-md, 12px);
+  border: 1px solid rgba(168, 162, 188, 0.2);
 }
 
 .schedule-left {
@@ -172,7 +207,7 @@
 .water-checkbox {
   width: 18px;
   height: 18px;
-  accent-color: #a8d5ba;
+  accent-color: var(--accent-sage, #8ea89d);
   cursor: pointer;
 }
 
@@ -183,7 +218,7 @@
 
 .schedule-date {
   font-size: 0.85rem;
-  color: #4a3f3a;
+  color: var(--text-main, #2c2421);
   display: flex;
   align-items: center;
   gap: 0.3rem;
@@ -192,23 +227,26 @@
 
 .today-badge {
   font-size: 0.6rem;
-  background: #b8a9c9;
-  color: white;
+  background: var(--accent-lavender, #a8a2bc);
+  color: #ffffff;
   padding: 0.05rem 0.4rem;
   border-radius: 8px;
+  font-weight: 500;
 }
 
 .missed-badge {
   font-size: 0.6rem;
-  background: #e8b4b4;
-  color: white;
+  background: #c8968c;
+  color: #ffffff;
   padding: 0.05rem 0.4rem;
   border-radius: 8px;
+  font-weight: 500;
 }
 
 .done-badge {
   font-size: 0.6rem;
-  color: #a8d5ba;
+  color: var(--accent-sage, #8ea89d);
+  font-weight: 500;
 }
 
 .schedule-middle {
@@ -228,35 +266,40 @@
 
 .schedule-amount {
   font-weight: 600;
-  color: #4a3f3a;
+  color: var(--text-main, #2c2421);
   padding: 0.1rem 0.5rem;
   border-radius: 12px;
-  background: #faf6f0;
+  background: var(--bg-primary, #fbf9f7);
+  border: 1px solid var(--border-light, rgba(220, 210, 200, 0.4));
+  font-size: 0.85rem;
 }
 
 .schedule-amount:hover {
-  background: #f0e8dc;
+  background: var(--surface-primary, #ffffff);
 }
 
 .edited-badge {
   font-size: 0.6rem;
-  color: #9a87b1;
+  color: var(--accent-lavender, #a8a2bc);
+  font-weight: 500;
 }
 
 .schedule-time {
   font-size: 0.8rem;
-  color: #6b5e52;
-  background: #f5ede4;
+  color: var(--text-muted, #7c6f66);
+  background: var(--bg-primary, #fbf9f7);
   padding: 0.05rem 0.5rem;
   border-radius: 10px;
+  border: 1px solid var(--border-light, rgba(220, 210, 200, 0.4));
 }
 
 .adjustment-reason {
   font-size: 0.7rem;
-  color: #6a8a5a;
-  background: #f2faf5;
+  color: var(--accent-sage, #8ea89d);
+  background: rgba(142, 168, 157, 0.06);
   padding: 0.05rem 0.5rem;
   border-radius: 10px;
+  border: 1px solid rgba(142, 168, 157, 0.2);
 }
 
 .schedule-right {
@@ -268,13 +311,13 @@
 
 .schedule-notes {
   font-size: 0.8rem;
-  color: #9a8a7a;
+  color: var(--text-muted, #7c6f66);
   font-style: italic;
 }
 
 .completed-time {
   font-size: 0.65rem;
-  color: #9a8a7a;
+  color: var(--text-muted, #7c6f66);
 }
 
 /* Edit Amount */
@@ -287,9 +330,16 @@
 .edit-amount input {
   width: 80px;
   padding: 0.2rem 0.5rem;
-  border: 1.5px solid #b8a9c9;
+  border: 1.5px solid var(--accent-lavender, #a8a2bc);
   border-radius: 20px;
   font-size: 0.85rem;
+  background: var(--surface-primary, #ffffff);
+  color: var(--text-main, #2c2421);
+}
+
+.edit-amount input:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(168, 162, 188, 0.15);
 }
 
 .edit-amount button {
@@ -298,17 +348,27 @@
   border-radius: 15px;
   font-size: 0.75rem;
   cursor: pointer;
-  transition: 0.2s;
+  transition: var(--transition-smooth, all 0.3s cubic-bezier(0.16, 1, 0.3, 1));
+  font-weight: 500;
 }
 
 .edit-amount button:first-of-type {
-  background: #b8a9c9;
-  color: white;
+  background: var(--accent-lavender, #a8a2bc);
+  color: #ffffff;
+}
+
+.edit-amount button:first-of-type:hover {
+  background: #9a87b1;
 }
 
 .edit-amount button:last-of-type {
-  background: #f5ede4;
-  color: #6b5e52;
+  background: var(--bg-primary, #fbf9f7);
+  color: var(--text-muted, #7c6f66);
+  border: 1px solid var(--border-light, rgba(220, 210, 200, 0.4));
+}
+
+.edit-amount button:last-of-type:hover {
+  background: var(--surface-primary, #ffffff);
 }
 
 /* Legend */
@@ -317,9 +377,10 @@
   gap: 1rem;
   margin-top: 1rem;
   padding-top: 0.8rem;
-  border-top: 1px solid #f5ede4;
+  border-top: 1px solid var(--border-light, rgba(220, 210, 200, 0.4));
   font-size: 0.75rem;
-  color: #6b5e52;
+  color: var(--text-muted, #7c6f66);
+  flex-wrap: wrap;
 }
 
 .legend-item {
@@ -336,25 +397,59 @@
 }
 
 .legend-dot.unchecked {
-  background: #f5ede4;
-  border: 1px solid #d4c5b2;
+  background: var(--bg-primary, #fbf9f7);
+  border: 1.5px solid var(--border-light, rgba(220, 210, 200, 0.4));
 }
 
 .legend-dot.checked {
-  background: #a8d5ba;
+  background: var(--accent-sage, #8ea89d);
 }
 
 .legend-dot.missed {
-  background: #e8b4b4;
+  background: #c8968c;
 }
 
 .legend-dot.today {
-  background: #b8a9c9;
+  background: var(--accent-lavender, #a8a2bc);
 }
 
 .no-schedule {
-  color: #9a8a7a;
+  color: var(--text-muted, #7c6f66);
   text-align: center;
-  padding: 1rem 0;
+  padding: 1.5rem 0;
   font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .schedule-item {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.3rem;
+  }
+
+  .schedule-left {
+    min-width: unset;
+  }
+
+  .schedule-middle {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .schedule-right {
+    justify-content: flex-start;
+  }
+
+  .edit-amount {
+    flex-wrap: wrap;
+  }
+
+  .edit-amount input {
+    width: 60px;
+  }
+
+  .schedule-legend {
+    gap: 0.5rem;
+  }
 }
